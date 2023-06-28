@@ -19,8 +19,8 @@ function hienThiDanhMuc() {
     let showList = '';
     for (let i=0 ;i<dsThucDon.length ; i++){
         showList += ` <div style="margin-right : 20px;font-size : 25px ">
-             <img src="${dsCombo[i].anh}" alt="${dsThucDon[i].ten}" style="width: 300px;height: auto; " onclick="thucdon(${i})">
-             <p>${dsCombo[i].ten}</p>
+             <img src="${dsThucDon[i].anh}" alt="${dsThucDon[i].ten}" style="width: 300px;height: auto; " onclick="thucdon(${i})">
+             <p>${dsThucDon[i].ten}</p>
          </div> `
     }
     return showList;
@@ -52,9 +52,9 @@ function deal() {
 }
 function reloadd() {
     location.href='/casestudy/kfc.html';
-    taikhoan = ''
-    localStorage.setItem("username", taikhoan)
-    document.getElementById("tendn").innerHTML  = localStorage.getItem("username")
+    // taikhoan = ''
+    // localStorage.setItem("username", taikhoan)
+    // document.getElementById("tendn").innerHTML  = localStorage.getItem("username")
 }
 function dangnhap1() {
     location.href = '/casestudy/dangnhap.html'

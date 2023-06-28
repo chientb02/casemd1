@@ -7,6 +7,8 @@ function dangNhap() {
         location.href= 'product.html'
        localStorage.setItem("username", taikhoan)
         document.getElementById("tendn").innerHTML  = localStorage.getItem("username")
+        document.getElementById("editcombo").style.display = "block"
+
     }else {
         alert('Sai mất rồi') ;
     }

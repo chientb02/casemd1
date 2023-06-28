@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header.css">
+
 </head>
-<body onload="showComBo()" >
+<body onload="showComBo() ,showdsMonMoi(), showdsGaRan()" >
 <div class="header">
-    <div class="logo"><img src="IMG/bn/logo1.jpg" height="125" width="125" onclick="reloadd()"></div>
+    <div class="logo"><img src="IMG/bn/logo1.jpg"  height="125" width="125" onclick="reloadd()"></div>
     <div class="listmenu">
         <li onclick="menu()">MENU</li>
         <li onclick="deal()" >DEALS</li>
@@ -18,9 +18,9 @@
         <div class="login">
             <p  style="margin: 0;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" onclick="dangnhap1()">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-            </svg>
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
             </p>
             <p id="tendn"></p>
         </div>
@@ -32,23 +32,39 @@
     <div class="combo" id="deal">
         <h2>Combo</h2>
         <div id="combo"></div>
-        <div class='editcombo' >
+        <div id='editc' >
             <input type="text" id="name" placeholder="tên"> <br>
             <input type="text" id="img" placeholder="ảnh"> <br>
             <input type="text" id="price" placeholder="giá"> <br>
             <input type="text" id="tt" placeholder="thông tin"> <br>
-            <button onclick="new_Product()" >Add</button>
-            <button onclick="update()">edit</button>
+            <button onclick="new_Combo()" >Add</button>
+            <button onclick="updateCombo()">edit</button>
         </div>
     </div>
 
     <div class="monMoi" id="monmoinew" style="clear :left;">
         <h2 >Món mới</h2>
         <div id="monMoi"></div>
+        <div id='editc' >
+            <input type="text" id="name1" placeholder="tên"> <br>
+            <input type="text" id="img1" placeholder="ảnh"> <br>
+            <input type="text" id="price1" placeholder="giá"> <br>
+            <input type="text" id="tt1" placeholder="thông tin"> <br>
+            <button onclick="new_dsMonMoi()" >Add</button>
+            <button onclick="updatedsMonMoi()">edit</button>
+        </div>
     </div>
     <div class="gaRan" id="garannew" style="clear :left;">
         <h2 >Gà rán - Gà quay</h2>
         <div id="gaRan"></div>
+        <div id='editc' >
+            <input type="text" id="name2" placeholder="tên"> <br>
+            <input type="text" id="img2" placeholder="ảnh"> <br>
+            <input type="text" id="price2" placeholder="giá"> <br>
+            <input type="text" id="tt2" placeholder="thông tin"> <br>
+            <button onclick="new_dsGaRan()" >Add</button>
+            <button onclick="updatedsGaRan()">edit</button>
+        </div>
     </div>
 
 </div>
@@ -68,4 +84,5 @@
 </body>
 <script src="jsdangnhap.js"></script>
 <script src="sanpham.js"></script>
+<script src="script.js"></script>
 </html>
