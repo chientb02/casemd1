@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header.css">
 </head>
-<body >
+<body onload="showComBo()" >
 <div class="header">
     <div class="logo"><img src="IMG/bn/logo1.jpg" height="125" width="125" onclick="reloadd()"></div>
     <div class="listmenu">
@@ -32,6 +32,14 @@
     <div class="combo" id="deal">
         <h2>Combo</h2>
         <div id="combo"></div>
+        <div class='editcombo' >
+            <input type="text" id="name" placeholder="tên"> <br>
+            <input type="text" id="img" placeholder="ảnh"> <br>
+            <input type="text" id="price" placeholder="giá"> <br>
+            <input type="text" id="tt" placeholder="thông tin"> <br>
+            <button onclick="new_Product()" >Add</button>
+            <button onclick="update()">edit</button>
+        </div>
     </div>
 
     <div class="monMoi" id="monmoinew" style="clear :left;">

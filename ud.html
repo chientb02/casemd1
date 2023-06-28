@@ -136,3 +136,197 @@ Display All Product
 
 
 </html>
+  class Student {
+    constructor (id, fullname, date, gender, grade, img) {
+      this.id= id;
+      this.fullname= fullname;
+      this.date= date;
+      this.gender= gender;
+      this.grade= grade;
+      this.img = img;
+    }
+    getID() {
+      return this.id;
+    }
+    getFullname() {
+      return this.fullname;
+    }
+    getDate() {
+      return this.date;
+    }
+    getGender(){
+      return this.gender;
+    }
+    getGrade() {
+      return this.grade;
+
+    }
+    getImg() {
+      return this.img;
+    }
+    setID(id) {
+      this.id=id;
+    }
+    setFullname(fullname) {
+      this.fullname=fullname;
+    }
+    setDate(date) {
+      this.date=date;
+    }
+    setGender(gender){
+      this.gender=gender;
+    }
+    setGrade(grade) {
+      this.grade=grade;
+    }
+    setImg(img){
+      this.img=img;
+    }
+
+    edit(id, fullname, date,gender, grade, img){
+      this.id = id;
+      this.fullname = fullname;
+      this.date = date;
+      this.gender = gender;
+      this.grade = grade;
+      this.img = img
+    }
+  }
+  function addStudent(){
+    let id = document.getElementById('id').value;
+    let name = document.getElementById('fullname').value;
+    let date = document.getElementById('date').value;
+    let gender = document.getElementById('gender').value;
+    let grade = document.getElementById('grade').value;
+    let img = document.getElementById('img').value;
+
+    let student = new Student(id,name,date,gender,grade,img);
+    manage.addStudent(student);
+    manage.showList();
+    clear();
+  }
+
+  function clear(){
+    document.getElementById('id').value = '';
+    document.getElementById('fullname').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('gender').value = '';
+    document.getElementById('grade').value = '';
+    document.getElementById('img').value= '';
+  }
+
+  function deleteStudent(id) {
+    manage.delete(id);
+    manage.showList();
+  }
+
+  let studentId = 0;
+  function editStudent(id){
+    let student = manage.findStudentById(id);
+    document.getElementById('id').value = student.id;
+    document.getElementById('fullname').value = student.fullname;
+    document.getElementById('date').value = student.date;
+    document.getElementById('gender').value = student.gender;
+    document.getElementById('grade').value = student.grade;
+    document.getElementById('img').value = student.img;
+
+    studentId = id;
+  }
+
+  function updateStudent(){
+    let id = document.getElementById('id').value;
+    let name = document.getElementById('fullname').value;
+    let date = document.getElementById('date').value;
+    let gender = document.getElementById('gender').value;
+    let grade = document.getElementById('grade').value;
+    let img = document.getElementById('img').value;
+
+    let student = manage.findStudentById(studentId);
+    manage.edit(student,id,name,date,gender,grade, img);
+    manage.showList();
+    clear();
+  }
+
+  manage.showList();
+
+
+  addStudent(student) {
+    this.students.push(student);
+  }
+
+  delete(id) {
+    this.students.splice(id, 1);
+  }
+
+  findStudentById(id){
+    return this.students[id];
+  }
+
+  edit(student,id, fullname, date, gender, grade, img){
+    student.edit(id, fullname, date,gender, grade, img);
+  }
+
+  }
+
+
+    <h1><label for="add">Add new product</label></h1>
+    <input type="text" placeholder="New product" id="add">
+    <button onclick="addProduct()">Add</button>
+    <div id="div_edit" style="display: none">
+    <h1><label for="edit">Edit product</label></h1>
+    <input type="text" placeholder="New name" id="edit">
+    <button onclick="edit()">Edit</button>
+    </div>
+    <h1>Display all product</h1>
+    <div id="table_product"></div>
+
+    let arrNameProduct = ["Iphone", "Samsung", "OPPO"]
+
+    function displayAllProduct() {
+    let data = "<table>"
+    data += "<tr>" +
+    "<td colspan='2'>Product name</td>" +
+    "<td style='color: red'><b>" + arrNameProduct.length +" products</b></td>" +
+    "</tr>"
+    for (let i = 0; i < arrNameProduct.length; i++) {
+    data += "<tr>"
+    data += "<td>" + arrNameProduct[i] + "</td>"
+    data += "<td>" + "<button onclick='editProduct(" + i + ")'>Edit</button>" + "</td>"
+    data += "<td>" + "<button onclick='deleteProduct(" + i + ")'>Delete</button>" + "</td>"
+    data += "</tr>"
+  }
+    data += "</table>"
+    document.getElementById("table_product").innerHTML = data
+  }
+
+    displayAllProduct()
+
+    function addProduct() {
+    let newProduct = document.getElementById("add").value
+    if (newProduct !== "") {
+    arrNameProduct.push(newProduct)
+  }
+    document.getElementById("add").value = ""
+    displayAllProduct()
+  }
+
+
+
+    let viTri;
+
+    function editProduct(index) {
+    // arrNameProduct[index] = prompt("Input new name product: ")
+    // displayAllProduct()
+
+    let oldName = arrNameProduct[index]
+    viTri = index
+    document.getElementById("edit").value = oldName
+    document.getElementById("div_edit").style.display = "block"
+  }
+
+    function edit() {
+    arrNameProduct[viTri] = document.getElementById("edit").value
+    document.getElementById("div_edit").style.display = "none"
+    displayAllProduct()
+  }
+
