@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+h1
+  </style>
+</head>
+<body onload="display_produce()">
+<h1>
+  Add New Product
+</h1>
+<div class="input">
+  <input type="text" id="newProduct">
+  <button  onclick="new_Product()">Add</button>
+</div>
+<p>
+<h2>Update product</h2>
+<input type="text" id="textUpdate"> <button onclick="update()" >Update</button>
+<br>
+Display All Product
+</p>
+<p id="displayproduce"></p>
+</body>
+<script>
+  var arr= ['Sony Xperia','Samsung Galaxy','Nokia 6','Xiaomi Redmi Note 4','Apple iPhone 6S','Xiaomi Mi 5s Plus', 'Apple iPhone 8Plus','Fujitsu F-04E','Oppo A71']
+  var a=0
+  function display_produce () {
+    let produce ='<table>'
+    for (let i = 0; i <arr.length; i++) {
+      produce += ('<tr>' + '<td>'+arr[i]+'</td>'+ '<td > <button onclick="editProduce('+i+')">Edit</button>  </td>'+ '<td><button onclick="deleteProduce('+i+')">Delete</button></td>')
+    } produce += '</table>'
+    document.getElementById('displayproduce').innerHTML= produce
+  }
+  function new_Product () {
+    let newProduct= document.getElementById('newProduct').value;
+    alert ('đã thêm sản phẩm ' + newProduct )
+    arr.push(newProduct)
+    display_produce()
+  }
+  function editProduce(index) {
+    var inputElement = document.getElementById('textUpdate')
+    inputElement.value= arr[index]
+    a= index
+  }
+  function deleteProduce(index) {
+    arr.splice(index,1);
+    display_produce()
+    alert('xóa thành công')
+  }
+  function update() {
+    var upDate = document.getElementById('textUpdate').value ;
+    arr[a]= upDate
+    display_produce()
+    alert('sửa thành công')
+  }
+
+
+</script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<img src="IMG/prd/td1.jpg" height="390" width="480"/></body>
+<script>
+  class Temperature {
+    doC
+    doK
+    doF
+
+    constructor(doC) {
+      this.doC = doC
+    }
+
+    calKelvin() {
+      this.doK = this.doC + 273
+    }
+
+    getKelvin() {
+      return this.doK
+    }
+
+    calFahrenheit() {
+      this.doF = this.doC * (9/5) + 32
+    }
+
+    getFahrenheit() {
+      return this.doF
+    }
+  }
+
+  let temp = new Temperature(25)
+  temp.calKelvin()
+  temp.calFahrenheit()
+  console.log("Độ C sang độ K là: " + temp.getKelvin())
+  console.log("Độ C sang độ F là: " + temp.getFahrenheit())
+  console.log("Độ C sang độ K là: " + temp.doK)
+  console.log("Độ C sang độ F là: " + temp.doF)
+
+  function logIn() {
+    let checkLogIn = document.getElementById('logIn').innerHTML
+    if (checkLogIn === 'Đăng nhập') {
+      document.getElementById('formLogIn').style.display = 'block'
+    } else {
+      confirm('Bạn có muốn đăng xuất không?')
+      document.getElementById('logIn').innerHTML = 'Đăng nhập'
+      localStorage.setItem('iLogIn', 'false');
+      displayProduct()
+    }
+  }
+
+
+  function submit() {
+    let nameLogIn = document.getElementById('nameLogIn').value
+    let passLogIn = document.getElementById('passLogIn').value
+    if (nameLogIn === localStorage.getItem('username')) {
+      if (passLogIn === localStorage.getItem('password')) {
+        alert('Đăng nhập thành công!')
+        document.getElementById('formLogIn').style.display = 'none'
+        localStorage.setItem('iLogIn', 'true')
+        document.getElementById('logIn').innerHTML = 'Đăng xuất'
+        displayProduct()
+      } else {
+        alert('Vui lòng nhập lại mật khẩu!')
+      }
+    } else alert('Vui lòng nhập lại tên tài khoản!')
+  }
+
+
+
+
+</html>
