@@ -5,17 +5,29 @@ function dangNhap() {
     if (taikhoan == 'chienne' && matkhau== 123){
         alert('đăng nhập thành công')
         location.href= 'product.html'
-       localStorage.setItem("username", taikhoan)
-        document.getElementById("tendn").innerHTML  = localStorage.getItem("username")
-        document.getElementById("editcombo").style.display = "block"
-
+       localStorage.setItem("usern", taikhoan)
     }else {
         alert('Sai mất rồi') ;
     }
 }
 
+window.addEventListener('DOMContentLoaded', function(event) {
+    var username = localStorage.getItem("usern");
+    if (username) {
+        document.getElementById("tendn").innerHTML = username;
+        document.getElementById("editc1").style.display = "block";
+        document.getElementById("editc2").style.display = "block";
+        document.getElementById("editc3").style.display = "block";
 
+    }
+});
+function dangnhap1() {
 
+    document.getElementById("delete").addEventListener("click", function() {
+        localStorage.removeItem("usern",taikhoan);
+    })
+    location.href = '/casestudy/dangnhap.html';
+}
 
 
 

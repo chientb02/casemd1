@@ -52,11 +52,7 @@ function deal() {
 }
 function reloadd() {
     location.href='/casestudy/kfc.html';
-    // taikhoan = ''
-    // localStorage.setItem("username", taikhoan)
-    // document.getElementById("tendn").innerHTML  = localStorage.getItem("username")
+
 }
-function dangnhap1() {
-    location.href = '/casestudy/dangnhap.html'
-}
+
 

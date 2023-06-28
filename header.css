@@ -107,6 +107,15 @@ h1 {
 .sanPham:hover img {
     transform: translate(0, -10px) scale(1);
 }
+.ttSanpham button {
+    border-radius: 10px;
+    width :100px ;
+    height: 35px;
+    border: none;
+    background-color: mediumseagreen;
+    color: azure;
+    margin-right: 10px;
+}
 /*css đăng nhập*/
 .login {
     display: flex;
@@ -136,4 +145,47 @@ h1 {
     font-size: 20px;
     color:white;
     background-color: green;
+}
+/*  ô sửa sản phầm    */
+
+#editc1 input {
+    margin : 8px;
+    height: 35px;
+    width:300px;
+}
+#editc1 button  {
+    border-radius: 10px;
+    width :100px ;
+    height: 35px;
+    border: none;
+    background-color: green;
+    color: azure;
+    margin:10px;
+}#editc2 input {
+    margin : 8px;
+    height: 35px;
+    width:300px;
+}
+#editc2 button  {
+    border-radius: 10px;
+    width :100px ;
+    height: 35px;
+    border: none;
+    background-color: green;
+    color: azure;
+    margin:10px;
+}
+#editc3 input {
+    margin : 8px;
+    height: 35px;
+    width:300px;
+}
+#editc3 button  {
+    border-radius: 10px;
+    width :100px ;
+    height: 35px;
+    border: none;
+    background-color: green;
+    color: azure;
+    margin:10px;
 }

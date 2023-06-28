@@ -8,7 +8,11 @@
 </head>
 <body onload="showComBo() ,showdsMonMoi(), showdsGaRan()" >
 <div class="header">
-    <div class="logo"><img src="IMG/bn/logo1.jpg"  height="125" width="125" onclick="reloadd()"></div>
+    <div class="logo">
+        <button onclick="reloadd()" id="delete">
+            <img src="IMG/bn/logo1.jpg"  height="125" width="125" >
+        </button>
+        </div>
     <div class="listmenu">
         <li onclick="menu()">MENU</li>
         <li onclick="deal()" >DEALS</li>
@@ -32,38 +36,38 @@
     <div class="combo" id="deal">
         <h2>Combo</h2>
         <div id="combo"></div>
-        <div id='editc' >
+        <div id='editc1'  style="display:none;" >
             <input type="text" id="name" placeholder="tên"> <br>
             <input type="text" id="img" placeholder="ảnh"> <br>
             <input type="text" id="price" placeholder="giá"> <br>
             <input type="text" id="tt" placeholder="thông tin"> <br>
             <button onclick="new_Combo()" >Add</button>
-            <button onclick="updateCombo()">edit</button>
+            <button onclick="updateCombo()">UpDate</button>
         </div>
     </div>
 
     <div class="monMoi" id="monmoinew" style="clear :left;">
         <h2 >Món mới</h2>
         <div id="monMoi"></div>
-        <div id='editc' >
+        <div id='editc2' style="display:none;" >
             <input type="text" id="name1" placeholder="tên"> <br>
             <input type="text" id="img1" placeholder="ảnh"> <br>
             <input type="text" id="price1" placeholder="giá"> <br>
             <input type="text" id="tt1" placeholder="thông tin"> <br>
             <button onclick="new_dsMonMoi()" >Add</button>
-            <button onclick="updatedsMonMoi()">edit</button>
+            <button onclick="updatedsMonMoi()">UpDate</button>
         </div>
     </div>
     <div class="gaRan" id="garannew" style="clear :left;">
         <h2 >Gà rán - Gà quay</h2>
         <div id="gaRan"></div>
-        <div id='editc' >
+        <div id='editc3' style="display:none;" >
             <input type="text" id="name2" placeholder="tên"> <br>
             <input type="text" id="img2" placeholder="ảnh"> <br>
             <input type="text" id="price2" placeholder="giá"> <br>
             <input type="text" id="tt2" placeholder="thông tin"> <br>
             <button onclick="new_dsGaRan()" >Add</button>
-            <button onclick="updatedsGaRan()">edit</button>
+            <button onclick="updatedsGaRan()">UpDate</button>
         </div>
     </div>
 
