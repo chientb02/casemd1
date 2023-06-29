@@ -114,6 +114,7 @@ h1 {
     border: none;
     background-color: mediumseagreen;
     color: azure;
+    float:left;
     margin-right: 10px;
 }
 /*css đăng nhập*/
