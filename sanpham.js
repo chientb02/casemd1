@@ -72,9 +72,13 @@ function new_Combo() {
 }
 
 function deleteCombo(index) {
-    dsCombo.splice(index, 1)
-    showComBo()
-}
+    let delet = confirm('xóa đi nhá')
+    if(delet){
+        dsCombo.splice(index, 1)
+        showComBo()
+    }
+    }
+
 
 let dem
 
@@ -166,8 +170,12 @@ function new_dsMonMoi() {
 }
 
 function deletedsMonMoi(index) {
-    dsMonMoi.splice(index, 1)
-    showdsMonMoi()
+    let delet = confirm('xóa đi nhá')
+    if(delet){
+        dsMonMoi.splice(index, 1)
+        showdsMonMoi()
+    }
+
 }
 
 let dem1
@@ -260,8 +268,12 @@ function new_dsGaRan() {
 }
 
 function deletedsGaRan(index) {
-    dsGaRan.splice(index, 1)
-    showdsGaRan()
+    let delet = confirm('xóa đi nhá')
+    if(delet){
+        dsGaRan.splice(index, 1)
+        showdsGaRan()
+    }
+
 }
 
 let dem2
